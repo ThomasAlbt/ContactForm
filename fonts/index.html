@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="./css/style.css">
+    </head>
+    <body>
+
+        <main>
+            <div id="app">
+                <add-contact v-bind:contacts="contacts"></add-contact>
+                <div class="showContact first">
+                    <p>Nom</p>
+                    <p>Prénom</p>
+                    <p>Téléphone</p>
+                    <p class="email">Email</p>
+                    <p>Modifier</p>
+                    <p>Supprimer</p>
+                </div>
+                <show-contact v-for="(contact, index) in contacts" :key="index" v-bind:contact="contact" @delete-contact="deleteContact"></show-contact>
+            </div>
+        </main>
+        
+        <footer>
+            <div class="footer-content">
+                <p>WIP : la fonction Modifier</p>
+                <p>Made with love by Thomas Albert (and some VueJS)</p>
+                <div class="social-links">
+                    <a href="https://github.com/ThomasAlbt" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/thomas-albert-web/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+        </footer>
+        
+        <script type="module" src="app.js"></script>
+    </body>
+</html>
