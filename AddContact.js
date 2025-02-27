@@ -77,9 +77,6 @@ export default Vue.component("AddContact", {
         showError(message) {
             this.errorMessage = message;
             this.showModal = true;
-        },
-        closeModal() {
-            this.showModal = false;
         }
     }
 });

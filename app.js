@@ -25,8 +25,10 @@ new Vue ({
             }
         },
         deleteContact(email) {
-            this.contacts = this.contacts.filter(contact => contact.email !== email);
-            localStorage.removeItem(email);
+            if(confirm("Vous etes sur de vouloir supprimer ce contact ?")) {
+                this.contacts = this.contacts.filter(contact => contact.email !== email);
+                localStorage.removeItem(email);
+            }
         }
     },
 
